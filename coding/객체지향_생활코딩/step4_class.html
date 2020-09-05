@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>클래스내에서 생성자함수 실행 </title>
+</head>
+<body>
+<!--
+http://Babeljs.io
+class 는 ECMA6에서 추가됨 -> ie에선 안되므로 바벨에서 컨버팅해서 사용하기
+-->
+
+<script>
+class person{
+	constructor(name,first,second){
+	    this.name = name;
+	    this.first = first;
+	    this.second = second;
+    }
+    sum(){
+        return `prototype : ` + (this.first + this.second);
+    }
+}
+
+//constructor 라는 이름써야지 js는 객체생성시 constructor를 자동으로 호출해준다
+
+
+var kim = new person('kim',10,20);
+console.log(kim);
+
+kim.sum = function () {
+    return `kim = ` + (this.first + this.second);
+}
+
+var lee = new person('lee',10,10);
+console.log(kim.sum());
+console.log(lee.sum());
+
+</script>
+</body>
+</html>

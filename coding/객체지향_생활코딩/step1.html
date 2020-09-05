@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>객체지향프로그래밍 step1</title>
+</head>
+<body>
+
+<script>
+let memberArray = ['apple','banana','grape'];
+console.group('array loop');
+let i =0;
+while ( i < memberArray.length){
+    console.log(i, memberArray[i]);
+    i = i+1;
+}
+console.groupEnd('array loop');
+
+let memberObj = {
+    mem1 :'apple',
+	mem2 : 'banana',
+	mem3 : 'grape'
+}
+console.group('object loop');
+for(let name in memberObj){
+    console.log(name, memberObj[name]);
+}
+
+
+console.groupEnd('object loop');
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>object.create이용한 proto대체</title>
+</head>
+<body>
+
+<script>
+//Object.create를 사용하여 객체와 객체간의 상속관계를 지정해주는 것이 좋은방법!
+
+let superObj = {superVal :'super'}
+//let subObj = {subVal :'sub'}
+//subObj.__proto__ = superObj;
+
+let subObj = Object.create(superObj);   //superObj를 부모로하는 새로운 객체만듦
+superObj.subVal = 'sub';
+
+//debugger;       //js의 실행을 일시중지시킬 수 있고, 객체상태를 들여다 볼 수 있다.
+console.log(subObj.subVal);
+console.log(subObj.superVal);
+subObj.superVal = 'sub';
+console.log(superObj.superVal);
+</script>
+</body>
+</html>

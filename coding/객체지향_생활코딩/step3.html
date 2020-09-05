@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>factory</title>
+</head>
+<body>
+
+<script>
+let kim = {
+    name : 'kim',
+	first : 10,
+	second : 20,
+	third : 30,
+	sum : function () {
+		return this.first + this.second + this.third;
+    }
+}
+let lee = {
+    name : 'kim',
+	first : 10,
+	second : 10,
+    third : 30,
+	sum : function () {
+		return this.first + this.second + this.third;
+    }
+}
+console.log(kim.sum());
+console.log(lee.sum());
+
+let d1 = new Date('2020-09-02');
+console.log(d1.getFullYear());
+console.log(d1.getMonth());
+</script>
+</body>
+</html>

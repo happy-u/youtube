@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1><a href="index.html">web</a></h1>
+    <input type="button" class="btn_inp" value="night" onclick="nightDayHandler(this)">
+    <ol>
+        <li><a href="1.html">HTML</a></li>
+        <li><a href="2.html">css</a></li>
+        <li><a href="3.html">javascript</a></li>
+    </ol>
+
+    <h2>Javascript</h2>
+    <p>최근 3개월간 서울 15억 원 이상 아파트 시장의 거래가 주춤하고, 특히 강남 3구의 시세가 8주 이상 조정 중인 상황에서 서울이 아닌 경기도에서 고가 아파트 거래가 진행되는 것이 특별한 시장 사례다. 현재 동일 평형대 매물들의 시세는 모두 21억 원으로 나와 있다</p>
+
+</body>
+<script>
+    function LinksSetColor(color) {
+        var list = document.querySelectorAll('a'),
+                i = 0;
+        while( i < list.length){
+            list[i].style.color= color;
+            i = i+1 ;
+        }
+    }
+
+    function BodySetColor(color) {
+        document.querySelector('body').style.color = color;
+    }
+    function BodySetBackground(color) {
+        document.querySelector('body').style.backgroundColor = color;       //객체에 속해있는 함수는 메소드라한다.
+    }
+
+    function nightDayHandler(self){
+        var target = document.querySelector('body');
+
+        if( self.value === 'night'){
+            Body.SetBackground('black');
+            Body.SetColor('white');
+            self.value = 'day';
+
+            LinksSetColor('powderblue');
+        }else{
+             Body.SetBackground('white');
+             Body.SetColor('black');
+            self.value = 'night';
+
+            LinksSetColor('blue');
+        }
+    }
+
+</script>
+</html>

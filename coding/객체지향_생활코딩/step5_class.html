@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class 상속</title>
+</head>
+<body>
+
+<script>
+	//중복을 가능하게 해주는 것이 상속 - extends 사용
+
+class person{
+    constructor(name, first, second){
+        this.name = name;
+        this.first = first;
+        this.second = second;
+    }
+    sum(){
+        return this.first+this.second;
+    }
+}
+
+class personPlus extends person{    //extends를 사용 - 확장을 의미. person함수(부모)에서 확장한다는 의미!
+    avg(){
+		return (this.first+this.second)/2;
+    }
+}
+
+var kim = new personPlus('kim', 10, 20);
+console.log("kim.sum()", kim.sum());
+console.log("kim.avg()", kim.avg());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>agree_checkbox</title>
+<style>
+	*{ margin:0; padding:0;}
+	.center{ position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);}/* 삭제하고 사용 */
+
+	.ty1 .check input{ display:none;}
+	.ty1 .check span, .check i{ display:inline-block; vertical-align:middle;}
+	.ty1 .check .icon{ position:relative; display:inline-block; width:20px; height:20px; border:2px solid #000; border-radius:5px; background-color:transparent; cursor:pointer; }
+	.ty1 .check .icon:before,
+	.ty1 .check .icon:after{ content:''; position:absolute; display:inline-block; width:3px; height:0; border-radius:5px; background-color:#ff1100; transform-origin:left top; }
+	.ty1 .check .icon:before{ top:8px; left:2px; transform:rotate(-45deg);}
+	.ty1 .check .icon:after{ top:16px; left:10px; transform:rotate(-135deg);}
+.ty1
+	.ty1 .check input:checked ~ .icon{ border-color:#ff1100;}
+	.ty1 .check input:checked ~ .icon:before{ height:10px; transition:all 0.3s ease;}
+	.ty1 .check input:checked ~ .icon:after{ height:24px; transition:all 0.3s ease 0.3s;}
+
+	.ty2 input{ position:absolute; left:-9999px; opacity:0;}
+	.ty2 label{ position: relative; display:inline-block; padding-left:28px; font-size:15px; color:#111;}
+	.ty2 label:before{ content:''; display:block; position:absolute; left:0; background-image:url(./img/form.png); background-repeat:no-repeat; background-size:700px 80px;}
+	.ty2.check-small label:before{ width:20px; height:20px; background-position:-90px 0; }
+	.ty2.check-small label.on:before{ background-position:-130px 0;}
+	.ty2.check-small input{ height:34px; font-size:14px;}
+</style>
+</head>
+<body>
+<div class="center ty1">
+	<label class="check">
+		<input type="checkbox">
+		<i class="icon"></i>
+		<span>약관에 동의합니다</span>
+	</label>
+</div>
+<div class="ty2 check-small">
+	<label for="check">약관에 동의합니다</label>
+	<input type="checkbox" class="check2" id="check">
+</div>
+</body>
+</html>

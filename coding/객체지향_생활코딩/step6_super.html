@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class - super</title>
+</head>
+<body>
+
+<script>
+//부모클래스한테 일을 시키고 부모가 하지 못하는 일은 나만 하도록 할 떄 사용하는 키워드 super
+//super() : 부모클래스의 생성자 호출됨
+//super. : 부모클래스 지칭
+
+class preson{
+    constructor(name, first, second){
+        this.name = name;
+        this.first = first;
+        this.second = second;
+    }
+    sum(){
+        return this.first+this.second;
+    }
+}
+class presonPlus extends preson{
+    constructor(name, first, second, third){
+        /* 부모와 공통적인 일 제거
+        this.name = name;
+        this.first = first;
+        this.second = second;
+        */
+        super(name,first,second);
+        this.third = third;
+    }
+    sum(){
+        //return this.first + this.second + this.third;
+        return super.sum() + this.third;            //부모클래스의 sum()함수 호출
+    }
+    avg(){
+        return (this.first+this.second+this.third)/3;
+    }
+}
+
+var kim = new presonPlus('kim', 10, 20, 30);
+console.log("kim.sum()", kim.sum());
+console.log("kim.avg()", kim.avg());
+
+</script>
+</body>
+</html>

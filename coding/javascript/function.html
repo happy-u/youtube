@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+   <p> 함수의 핵심은 재사용성 ,즉 유지보수 용이 </p>
+</div>
+
+<script type="text/javascript">
+
+    number = function () {
+        i= 0;
+        while (i < 20 ){
+            document.write(i + '<br/>') ;
+            i += 1;
+        }
+    }
+
+
+    function number() {
+        var i =0 ;
+        while (i < 20 ){
+            document.write(i + '<br/>') ;
+            i += 1;
+        }
+    }
+    number();
+
+
+    (function () {
+        i= 0;
+        while (i < 20 ){
+            document.write(i + '<br/>') ;
+            i += 1;
+        }
+    })(); /* 익명함수 - 1회성, 바로사용*/
+
+
+</script>
+</body>
+</html>

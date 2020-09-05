@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>전통적인 자바스크립트 생성자함수</title>
+</head>
+<body>
+<!--
+http://Babeljs.io
+class 는 ECMA6에서 추가됨 -> ie에선 안되므로 바벨에서 컨버팅해서 사용하기
+-->
+
+<script>
+function person(name, first, second) {
+	this.name = name;
+	this.first = first;
+	this.second = second;
+}
+//생성자함수 => 객체만듦. 그 객체의 초기상태 셋팅
+
+person.prototype.sum = function () {
+	return 'prototype : ' + (this.first + this.second);
+}
+
+var kim = new person('kim',10,20);
+kim.sum = function () {
+	return 'this : ' + (this.first + this.second);
+}
+var lee = new person('lee',10,10);
+console.log(kim.sum());
+console.log(lee.sum());
+
+</script>
+</body>
+</html>

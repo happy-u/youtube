@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>객체간의 상속(클래스아닌 전통적객체지향)</title>
+</head>
+<body>
+
+<script>
+//__proto__ 통해서 subObj가 superObj의 자식이라는 것을 연결시켜 알려줌.
+
+let superObj = {superVal :'super'}
+let subObj = {subVal :'sub'}
+
+subObj.__proto__ = superObj;    //__proto__ 통해서 subObj가 superObj의 자식이라는 것을 연결시켜 알려줌.
+console.log(subObj.subVal);
+console.log(subObj.superVal);
+
+subObj.superVal = 'sub';
+console.log(superObj.superVal);
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>tab_menu</title>
+<style>
+	*{ margin:0; padding:0;}
+	input[type="radio"]{ display:none}
+	input[type="radio"] + label{ display:inline-block; padding:20px; background-color:#ccc; font-size:14px; color:#999; cursor:pointer; }
+	input[type="radio"]:checked + label{ background-color:#aaa; color:#000;}
+
+	.tab_content{ position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:12px;}
+	.conbox{ display:none; width:500px; height:600px; margin:0 auto;  background-color:#aaa;}
+	input[id="tab01"]:checked ~ .con1{ display:block; background-color:#bf6565;}
+	input[id="tab02"]:checked ~ .con2{ display:block; background-color:#64a9d6;}
+	input[id="tab03"]:checked ~ .con3{ display:block; background-color:#8045a2;}
+
+</style>
+</head>
+<body>
+<div class="tab_content">
+	<input type="radio" name="tabmenu" id="tab01" checked>
+	<label for="tab01">탭메뉴1</label>
+
+	<input type="radio" name="tabmenu" id="tab02">
+	<label for="tab02">탭메뉴2</label>
+
+	<input type="radio" name="tabmenu" id="tab03">
+	<label for="tab03">탭메뉴3</label>
+
+	<div class="conbox con1">컨텐츠 내용 1</div>
+	<div class="conbox con2">컨텐츠 내용 2</div>
+	<div class="conbox con3">컨텐츠 내용 3</div>
+</div>
+</body>
+</html>
